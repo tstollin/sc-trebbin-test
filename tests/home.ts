@@ -8,10 +8,21 @@ test('loads', async t => {
     await t.expect(headerText).eql('Herzlich Willkommen auf der Internetseite des SC Trebbin!')
 });
 
-test('shows 3 posts from categories handball, leichtathletik, verein', async t => {
-
+test('shows 3 posts each having at least one category from handball, leichtathletik, verein', async t => {
+    const posts = Selector('div.entry-content').find('.post')
+    const numPosts = await posts.count
+    await t.expect(numPosts).eql(3)
+    for (let postCount = 0; postCount < numPosts; postCount++) {
+        const matchingCategories = posts
+                                    .nth(postCount)
+                                    .find('span.cat-links')
+                                    .find('a')
+                                    .withText(/Verein|Handball|Leichtathletik/)
+       await t
+           .expect(matchingCategories.count)
+           .gte(1)
+    }
 });
-
 
 test('has linked post', async t => {
 
