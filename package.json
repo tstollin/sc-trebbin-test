@@ -1,0 +1,23 @@
+{
+  "name": "sc-trebbin-test",
+  "version": "0.0.1",
+  "description": "automated tests for the website sc-trebbin.de",
+  "main": "index.js",
+  "dependencies": {
+    "testcafe": "^1.14.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "testcafe chrome tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tstollin/sc-trebbin-test.git"
+  },
+  "author": "tstollin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tstollin/sc-trebbin-test/issues"
+  },
+  "homepage": "https://github.com/tstollin/sc-trebbin-test#readme"
+}
